@@ -31,6 +31,17 @@ namespace HTMLHAX
         {
             File.WriteAllText(path,data);
         }
+        public static string LoadChosenFile()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Find Scripts";
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                return File.ReadAllText(ofd.FileName);
+            }
+            return "";
+
+        }
 
     }
     public class exploitcontrols
