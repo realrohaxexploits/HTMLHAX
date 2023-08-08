@@ -42,16 +42,16 @@ namespace HTMLHAX
             return "";
 
         }
-        public bool SaveChosenFile(string path, string data)
+        public void SaveChosenFile(string data)
         {
            SaveFileDialog ofd = new SaveFileDialog();
            ofd.Title = "Find Scripts";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                File.WriteAllText (ofd.FileName, data);
-               return true;
+               
             }
-            return false;
+           
             
         }
         public string GetCurrentDirectory()
