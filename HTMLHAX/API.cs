@@ -9,7 +9,7 @@ using System.IO;
 
 namespace HTMLHAX
 {
-     public class FormControls
+    public class FormControls
     {
         public static string getonlinestring(string url)
         {
@@ -29,21 +29,31 @@ namespace HTMLHAX
         }
         public static void writefile(string path, string data)
         {
-            File.WriteAllText(path,data);
+            File.WriteAllText(path, data);
         }
         public static string LoadChosenFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Find Scripts";
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 return File.ReadAllText(ofd.FileName);
             }
             return "";
 
         }
-
+        public static bool SaveChosenFile(string path, string data)
+        {
+           SaveFileDialog ofd = new SaveFileDialog();
+           ofd.Title = "Find Scripts";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+               File.WriteAllText (ofd.FileName, data);
+               return true;
+            }
+            return false;
     }
+}
     public class exploitcontrols
     {
         public void executescript(string script) { apicalls.executescript(script); }
