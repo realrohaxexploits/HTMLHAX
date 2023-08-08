@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,27 +11,27 @@ namespace HTMLHAX
 {
     public class FormControls
     {
-        public static string getonlinestring(string url)
+        public string getonlinestring(string url)
         {
             return definers.wc.DownloadString(url);
         }
-        public static void Close()
+        public void Close()
         {
             Application.Exit();
         }
-        public static void downloadfile(string url, string path)
+        public void downloadfile(string url, string path)
         {
             definers.wc.DownloadFile(url, path);
         }
-        public static string readfile(string path)
+        public string readfile(string path)
         {
             return File.ReadAllText(path);
         }
-        public static void writefile(string path, string data)
+        public void writefile(string path, string data)
         {
             File.WriteAllText(path, data);
         }
-        public static string LoadChosenFile()
+        public string LoadChosenFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Find Scripts";
@@ -42,7 +42,7 @@ namespace HTMLHAX
             return "";
 
         }
-        public static bool SaveChosenFile(string path, string data)
+        public bool SaveChosenFile(string path, string data)
         {
            SaveFileDialog ofd = new SaveFileDialog();
            ofd.Title = "Find Scripts";
@@ -52,8 +52,14 @@ namespace HTMLHAX
                return true;
             }
             return false;
-    }
-}
+            
+        }
+        public string GetCurrentDirectory()
+        {
+           return Environment.CurrentDirectory;
+        }
+
+    }    
     public class exploitcontrols
     {
         public void executescript(string script) { apicalls.executescript(script); }
