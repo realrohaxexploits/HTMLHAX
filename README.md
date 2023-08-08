@@ -9,4 +9,4 @@ If you see errors when loading the code, they are just the missing packages. Ove
 
 
 ## Wiki
-Check out the wiki tab to see how to use this.
+[https://github.com/realrohaxexploits/HTMLHAX/wiki](Click here to go to the wiki)
